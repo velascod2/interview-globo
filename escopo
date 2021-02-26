@@ -1,0 +1,5 @@
+EC2 com docker e Nginx + Let's Encrypt.
+Automação Setup inicial: user_data (Cloud Init).
+Automação para deploy: Github Action.  
+https://docs.github.com/en/actions/learn-github-actions
+Provisionamento do servidor: Terraform.
