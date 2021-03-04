@@ -8,8 +8,16 @@ locals {
     # Install Nginx
     sudo yum install nginx -y
 
+    #Docker pull and run
+    sudo docker pull velascod2/projeto-globo:latest
+    sudo docker run -d velascod2/projeto-globo:latest
+
     # Back up existing config
-    #mv /etc/nginx /etc/nginx-backup
+    mkdir -p /etc/nginx-backup && cp -r /etc/nginx/* /etc/nginx-backup
+
+    # Restart and enable service
+    sudo systemctl restart nginx.service 
+    sudo systemctl enable nginx.service 
 
     # Install new configuration
     #unzip /tmp/nginxconfig.io-example.com.zip -d /etc/nginx

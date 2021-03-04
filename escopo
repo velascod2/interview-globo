@@ -1,6 +1,6 @@
 EC2 com docker e Nginx + Let's Encrypt.
-Automação Setup inicial: user_data (Cloud Init).
+Automação Setup inicial: user_data (Cloud Init). -  feito
 Automação para deploy: Github Action.  
 https://docs.github.com/en/actions/learn-github-actions
-Provisionamento do servidor: Terraform.
-Monitoria: agent new relic no servidor e enviar os dados para a conta free
+Provisionamento do servidor: Terraform. - feito
+Monitoria: agent new relic no servidor e enviar os dados para a conta free - feito
