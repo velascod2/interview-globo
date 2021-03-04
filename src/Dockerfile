@@ -1,13 +1,9 @@
 # Install the base requirements for the app.
 # This stage is to support development.
 FROM python:alpine AS base
-COPY /app .
-COPY /requirements.txt .
+COPY /app /app
+COPY /app/requirements.txt /app/requirements.txt
 WORKDIR /app
-RUN pip install -r requirements.txt
+RUN pip install -r /app/requirements.txt
+EXPOSE 8000 80    
 
-# Extract the static content from the build
-# and use a nginx image to serve the content
-FROM nginx:alpine
-COPY --from=app-zip-creator /app.zip /usr/share/nginx/html/assets/app.zip
-COPY --from=build /app/site /usr/share/nginx/html
