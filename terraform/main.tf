@@ -17,14 +17,12 @@ module "ec2_cluster" {
   source                     = "terraform-aws-modules/ec2-instance/aws"
   
   name                       = var.project_name
-  //ami                        = [data.aws_ami.server_ami]
   ami                        = "ami-0ecd34837cf9fa094"
   instance_type              = var.instance_type
   key_name                   = "project"
   monitoring                 = var.monitoring
   vpc_security_group_ids     = [module.ec2_sg.this_security_group_id]
   subnet_id                  = "subnet-bc4dd3da"
-  //subnet_id                  = [data.aws_subnet_ids.public_selected]
   user_data                  = local.userdata
 
 }
